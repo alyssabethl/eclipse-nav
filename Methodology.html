@@ -45,7 +45,7 @@
 
     <h2>Image Processing</h2>
     <p>
-        Preliminary image exploration is done using MATLAB. In this process, we first read the lunar elevation data in binary format. We then defined image 
+          Preliminary image exploration is done using MATLAB. In this process, we first read the lunar elevation data in binary format. We then defined image 
         dimensions based on metadata from the accompanying LBL (Label) file, specifying 15360 rows and 46080 columns. Since the raw binary data is stored in row-major 
         order, the matrix is transposed to match the correct spatial orientation of the lunar surface. Without transposition, the dataset would be flipped along its 
         axes, leading to incorrect interpretations of the topographic features. The elevation values are then converted from Digital Numbers (DN) to absolute height in 
@@ -57,7 +57,7 @@
         <figcaption>LOLA image: A visualization of Lunar elevation data</figcaption>
     </figure>
     <p>
-        Our initial investigation of eclipse photograph obtained from NASA Flickr account involve detection of moon edge at the time of total eclipse and obtaining 
+            Our initial investigation of eclipse photograph obtained from NASA Flickr account involve detection of moon edge at the time of total eclipse and obtaining 
         its geometric points. These points are stored in eclipse geometry.npy. The photograph used for this purpose is from a speedway in Indiana. Our first step is 
         to convert the image to gray scale and then apply gaussian blur. This will reduce the noise and make the edges of the desired object (Moon) more coherent. 
         Now to detect circle in the modified image we use Hough Circles function of OpenCV.
@@ -94,7 +94,7 @@
         verify the presence of Baily’s beads without relying solely on visual inspection.
     </p>
     <figure>
-        <img src="radial_azimuthal_intensity_map.png" width="30%" height="50%">
+        <img src="radial_azimuthal_intensity_map.png" width="50%" height="50%">
         <figcaption>radial-azimuthal intensity map of the provided photograph</figcaption>
     </figure>
     <div class="column">
@@ -137,11 +137,11 @@
     </figure>
     <div class="column">
         <figure>
-            <img src="overlay_beads_on_image.png" width="100%" height="100%">
+            <img src="overlay_beads_on_image.png" width="500" height="auto">
             <figcaption>Plotting 135 beads on Lunar Limb</figcaption>
         </figure>
         <figure>
-            <img src="top_10_baileys_beads_matched_overlay.png" width="100%" height="100%">
+            <img src="top_10_baileys_beads_matched_overlay.png" width="500" height="auto">
             <figcaption>Plotting top 10 beads on Lunar Limb</figcaption>
         </figure>
     </div>

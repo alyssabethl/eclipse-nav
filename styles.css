@@ -36,7 +36,8 @@ h2 {
 }
 
 p {
-    text-align: center;
+    text-align: left;
+    text-indent: 50px;
     color: lightslategray;
 
     font-family: "Source Code Pro", monospace;
