@@ -80,6 +80,7 @@ figcaption {
     font-weight: 400;
     font-style: normal;
     font-size: small;
+    text-align: center;
 }
 .column {
     display: flex;
