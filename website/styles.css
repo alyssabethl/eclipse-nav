@@ -83,11 +83,12 @@ figcaption {
 }
 .column {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;  /* Adjust gap to control space between images */
-}
-
-.column img {
-    max-width: 100%;    /* Ensures image doesn't overflow its container */
-    height: auto;       /* Keeps the aspect ratio intact */
-}
+    justify-content: center;
+    gap: 40px; /* adds spacing between figures */
+    flex-wrap: wrap; /* allows wrapping on smaller screens */
+  }
+  
+  .column figure {
+    text-align: center;
+  }
+  
