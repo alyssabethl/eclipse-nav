@@ -47,13 +47,85 @@
                 limb. Further we obtained improved <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2020JE006728" target="_blank"> Global Catalog of Lunar Craters
                 (≥ 1 km) with 3D Morphological Information</a> in order to recognize the craters on the limb.
             </p>
-        </div>
-
-        <div id="conclusion">
-            <h2>Conclusion</h2>
+            <br>
             <p>
-                
+                In the figure below, we present a preliminary attempt to overlay crater coordinate labels from the lunar crater dataset directly onto the eclipse image. At 
+                this stage, the overlay was performed without incorporating the observer’s location or aligning it to the previously computed limb profile. As a result, the 
+                crater-to-limb mapping has not yet been fully validated for spatial or geometric accuracy.
+            </p>
+            <br>
+            <figure>
+                <img src="craters_on_eclipse.png" width="50%" height="auto">
+                <figcaption>An experiment to plot raw crater data on eclipse image without any verification of limb points</figcaption>
+            </figure>
+            <p>
+                The intention of this visualization was to experiment with crater labeling and ex- plore how crater information could be visually integrated onto 
+                the eclipse imagery. Each green point represents a detected limb point, while the overlaid blue text in- dicates the crater coordinate (or 
+                identifier) matched to that point based solely on geometric proximity. This method does not yet account for the Earth-based ob- server’s viewpoint,
+                which is essential for accurate alignment given the Moon’s curvature and viewing geometry.
+            </p>
+            <br>
+            <p>
+                This image should therefore be interpreted as an experimental rendering rather than a scientifically validated mapping. Further refinement, including 
+                projection adjustments, observer, based limb transformation, and proper angular correction is needed to confirm whether the crater labels correspond to 
+                actual topographic features responsible for Baily’s beads in the given eclipse image. The figure is a result of the work in progress on this project.    
             </p>
         </div>
+
+<!---------Discussion-------->
+            <h2>Discussion</h2>
+            <p>
+                The project implements state-of-the-art computational techniques to analyze Bai- ley’s bead. By filtering for the top intensity peaks and validating 
+                their spatial clustering on the image, we confirm that our method reliably identifies candidate beads. The alignment of these bright features with known 
+                lunar limb irregularities, as extracted from SLDEM topography, strengthens confidence in its authenticity. We have utilized <a href="https://www.vlfeat.org/api/kdtree.html" target="_blank">3D lunar crater vectors 
+                and KDTree-based geometric matching</a> to associate observed limb points with specific craters. The most impact- ful contribution of this project is the 
+                feasibility of deducing the observer’s location based on which crater is responsible in producing the Bailey’s bead. While eclipse path maps are typically generated from known Earth positions, our method inverts this pipeline - starting from a crater’s alignment - and inferring where on Earth the observer must have been. Although preliminary, this inversion approach lays the groundwork for GPS-free localization during eclipses.
+            </p>
+            <br>
+            <p>
+                Several assumptions limit the scope of this project to a proof-of-concept demon- stration in localizing an observer on Earth. First, the project 
+                assumes a perfectly circular moon, which will be the case most of the time during totality but there might be some exceptions. It also does not 
+                account for atmospheric refraction or camera distortions. Noise, overexposed corona regions, and resolution limits may introduce false positives 
+                in bead detection.  
+            </p>
+            <br>
+            <p>
+                Another factor that can significantly enhance the accuracy of this method is the use of high-resolution lunar topography datasets that cover the entire 
+                Moon, including both poles (from +90◦ to 90◦ latitude). The current approach is limited by datasets with partial coverage or lower spatial resolution, 
+                potentially overlooking small but topographically significant craters near the poles. Also, the reliance on a static lunar topography neglects libration 
+                effects which may shift the visible limb from a given location.
+            </p>
+
+<!---------Conclusion-------->
+    <h2>Conclusion</h2> 
+    <p>
+        This work stands at the crossroads of innovation and nature, grounded in the echoes of history. Before the advent of GPS, it was second nature to navigate Earth 
+        tail, we have yet to fully link it to Earth in a way that enables spatial understanding and navigation. This connection is crucial. If humanity is to land and 
+        operate ef- fectively on the Moon, especially on the near side visible from Earth, we must learn to treat lunar geography not in isolation, but in relation to 
+        the Earth-Moon system. Only by knowing where we are on the Moon can we ensure that we remain close to home.
+    </p>
+    <br>
+    <p>
+        As we come to this conclusion, we can acknowledge that there is always room for improvement. The technique introduced in this project will fail to utilize 
+        its full potential until a large dataset of eclipse images are tested across varying expo- sure levels and observational conditions. Incorporation of lunar 
+        libration models and more accurate photometric correction could enhance crater-to-bead mapping. To take it further, machine learning classifiers can 
+        automate bead detection and ultimately estimate an observer’s latitude/longitude probabilistically.
+    </p>
+    <br>
+    <p>
+        Moreover, with some development, this project has the potential to contribute to <a href="https://www.nasa.gov/history/alsj/" target="_blank">localization and Earth-Moon alignment awareness</a>, 
+        especially in environments where the infrastructure (or lack thereof) limits the capabilities of GPS technologies, such as the Moon or even mountainous or heavily 
+        forested regions on Earth. Hypothetically, imagine an astronaut is disoriented on the far side or a near featureless region of the Moon. If that astronaut 
+        and those monitoring her from Earth are aware of where on the Moon she is and more importantly, whether Earth is visible from that spot, can be critical in 
+        establishing a line-of-sight communication with ground stations or satellites.
+    </p>
+    <br>
+    <p>
+        Our methodology already connects the appearance of lunar features with known observer locations on Earth. Since the Moon is tidally locked, the Earth is always 
+        visible from the near side. If a camera-equipped system (an astronaut or a rover) takes a photograph of the Earth from the Moon, our method can be enhanced to 
+        reverse engineer the Moon-to-Earth vector and map it to specific locations on the Moon. To implement it, we would additionally integrate a map of communication 
+        antennas and their location constraints. This concept paired with computer vision, ephemeris data, and known lunar models can become a real possibility in the 
+        near future.
+    </p>
     </body>
 </html>

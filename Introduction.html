@@ -32,11 +32,50 @@
         the expected bead patterns for various geographic locations. We then apply image processing and feature extraction techniques to eclipse im- ages to match
         the observed bead sequences with predicted models, thus estimating the photographer’s position.
     </p>
-
-    <h2>Related Work</h2>
+        <br>
     <p>
-
+        This project is the development of a computational pipeline that combines image-based detection of Baily’s Beads, 3D lunar topography (SLDEM2015[8]),
+        and ephemeris-based observer modeling. By extracting limb brightness profiles from eclipse images and matching them with simulated limb projections based on
+        known crater geometry, we identify the specific lunar features responsible for bead formation. Using this crater-bead correspondence, we then reverse engineer 
+        the eclipse geometry to estimate the observer’s terrestrial coordinates.
     </p>
+        <br>
+    <p>
+        This methodology introduces a novel approach to GPS-free Earth localization using natural astronomical events, with potential applications in celestial navigation, 
+        eclipse path validation, and lunar surface modeling. The results demonstrate that Baily’s Beads are not merely beautiful but can serve as measurable, reproducible, and 
+        location-dependent signals in computational perception.
+    </p>
+    <h2>Related Work</h2>
+        <br>
+        <ul>
+            <li>
+                In 2020, researchers at Wuhan University developed an algorithm to compute the geometric component of sky irradiation during an eclipse using Moon topography from 
+                the Lunar Reconnaissance Orbiter (LRO) mission. They also modeled the Baily’s beads of the 2012 solar eclipse observed in Lakeland, Australia 
+                (<a href="https://iopscience.iop.org/article/10.1088/1674-4527/21/1/11" target="_blank">source</a>). This inspired the use of Lunar Orbiter Laser Altimeter (LOLA) images
+                 for accurate coordinate calculations.
+            </li>
+            <li>
+                A 2021 paper titled “Lunar Crater Identification in Digital Images” addressed the challenge of identifying lunar craters in single images without known camera location. 
+                It introduced pre-computed mathematical descriptors for recognizing crater patterns (<a href="https://link.springer.com/article/10.1007/s40295-021-00287-8" target="_blank">source</a>).
+            </li>
+            <li>
+                Jayatissa (2021) studied the detection of disappearing Baily’s beads during a solar eclipse using intensity tracking in video footage. The study pinpointed video frames marking the end 
+                of the beads, using Limovie software to analyze footage from the December 26, 2019, annular eclipse (<a href="https://www.accimt.ac.lk/ACCIMT2/wp-content/uploads/2022/02/Detecting-the-disappearing-frames-of-the-Baily3.pdf" target="_blank">source</a>).
+            </li>
+            <li>
+                One key contribution was the manual detection of 37 disappearing beads tracked frame-by-frame to create light intensity curves. Challenges such as codec incompatibility and file size 
+                limits were overcome using preprocessing tools like VirtualDub. This dataset supports future solar radius estimation and lunar limb reconstruction.
+            </li>
+            <li>
+                Although limited by software and lacking automation or geolocation, the study demonstrated the potential of eclipse-based celestial measurements. It also highlighted opportunities for 
+                future work using high-resolution data and modern algorithms.
+            </li>
+            <li>
+                A 1975 paper gave historical insight into Baily’s bead observations during the June 1974 eclipse. It linked bead sequences to specific lunar topographical features, improving understanding 
+                of the Moon’s limb profile and eclipse prediction accuracy (<a href="https://ui.adsabs.harvard.edu/abs/1976Moon...15...91H/abstract" target="_blank">source</a>).
+            </li>
+        </ul>
+        
     </body>
 
 </html>

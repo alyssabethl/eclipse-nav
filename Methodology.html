@@ -110,10 +110,10 @@
 
 <!--- Plotting Lunar Limb -->
 
-    <h2>Plotting Narrow Lunar Limb</h2>
+    <h2>Plotting the Lunar Limb</h2>
     <p>
         This step of the project require thoughtful consideration of angle on Earth from where we are looking at the Moon. For this purpose, we explored 
-        two analytical approaches. The results clearly indicated which one was more suitable for adop- tion. We refer to our first approach as the “Observer 
+        two analytical approaches. The results clearly indicated which one was more suitable for adoption. We refer to our first approach as the “Observer 
         at +X direction” method, and the second as the "Earth-based Moon Position" method.
     </p>
     <figure>
@@ -125,7 +125,10 @@
     <p>
         The image processing of a global lunar image provides a broad overview of craters and other topographical features. However, it does not effectively 
         distinguish in- dividual craters, mountains, valleys, or their depths. Since Baily’s Beads are a direct result of the Moon’s limb topography, it is essential 
-        to extract and analyze its features at a microscopic level for precise characterization. Considering a SLDEM global lunar image, we can conclude that the image
+        to extract and analyze its features at a microscopic level for precise characterization. 
+    </p>
+    <p>
+        Considering a SLDEM global lunar image, we can conclude that the image
         spans +60° to -60° latitude and 0° to 360° longitude at a resolution of 128 pixels/degree. There are other global lunar images available that are mapped at 
         +60° to -60° latitude. We might consider those images latter in the project for better accuracy. For adding the elevation data to the image we converted it 
         to meters and added to the Moon’s reference radius (1737.4 km) to get the absolute radius at each grid point. We then created latitude and longitude grids and 
@@ -218,8 +221,8 @@
         <figcaption>Earth-Moon vector</figcaption>
     </figure>
     <p>
-        3D surface geometry is obtained from SLDEM2015 and moon’s angular diameter is calculated. Based on view angle and Moon’s angular radius we compute which
-        points lie along the limb. Limb points and Limb lat/long are stored in numpy array. In next step, we combine the stored limb points from the skyfield and
+        3D surface geometry is obtained from SLDEM2015 and the Moon’s angular diameter is calculated. Based on view angle and Moon’s angular radius we compute which
+        points lie along the limb. Limb points and Limb lat/long are stored in numpy array. In the next step, we combine the stored limb points from the skyfield and
         the eclipse image geometry to overlay the selected limb points that appear on then limb from the observer’s view. These pixel coordinates of the limb are
         then stored in another numpy array.
     </p>
